@@ -7,7 +7,7 @@ import {
 
 // استدعاء قاعدة بيانات السيارات من الملف المستقل
 import { CAR_DATABASE } from './carDate';
-
+import { Analytics } from '@vercel/analytics/react';
 // استدعاء اللوجو وخلفية الهيدر الاحتياطية
 import logo from './logo.png';
 import heroBg from './hero-bg.jpg';
@@ -1414,7 +1414,7 @@ export default function WheelsSkinsApp() {
           </div>
         </div>
       )}
-
+     <Analytics />
     </div>
   );
 }
