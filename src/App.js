@@ -424,7 +424,7 @@ export default function WheelsSkinsApp() {
             href="#booking" 
             className="bg-[#E3211C] hover:bg-red-700 text-white px-3 sm:px-4 py-2 rounded font-bold text-xs sm:text-sm transition flex items-center gap-1.5 mr-1"
           >
-            <Calendar className="w-3.5 h-3.5" />Book now ♥
+            <Calendar className="w-3.5 h-3.5" />Book now 
           </a>
         </div>
       </nav>
