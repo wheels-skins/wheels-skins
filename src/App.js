@@ -343,7 +343,7 @@ export default function WheelsSkinsApp() {
       `--------------------------------%0A` +
       `*إجمالي المبلغ:* ${totalPrice} ج.م`;
 
-    window.open(`https://wa.me/2001202738020?text=${message}`, '_blank');
+    window.open(`https://wa.me/201202738020?text=${message}`, '_blank');
   };
 
   const scrollStepDown = () => {
@@ -409,7 +409,7 @@ export default function WheelsSkinsApp() {
           </a>
 
           <a 
-            href="https://wa.me/01202738020" 
+            href="https://wa.me/201202738020" 
             target="_blank" 
             rel="noopener noreferrer" 
             title="واتساب"
