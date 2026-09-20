@@ -343,7 +343,7 @@ export default function WheelsSkinsApp() {
       `--------------------------------%0A` +
       `*إجمالي المبلغ:* ${totalPrice} ج.م`;
 
-    window.open(`https://wa.me/201202738020?text=${message}`, '_blank');
+    window.open(`https://wa.me/2001202738020?text=${message}`, '_blank');
   };
 
   const scrollStepDown = () => {
