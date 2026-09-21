@@ -1414,6 +1414,9 @@ export default function WheelsSkinsApp() {
           </div>
         </div>
       )}
+      <div className="py-8 max-w-6xl mx-auto px-4">
+        <div className="elfsight-app-93f92eec-4ab1-4e6a-a32b-0bb44040f15b" data-elfsight-app-lazy></div>
+      </div>
      <Analytics />
     </div>
   );
