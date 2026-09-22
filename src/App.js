@@ -201,7 +201,7 @@ export default function WheelsSkinsApp() {
   const handleNextTexture = () => {
     setActiveTextureIndex((prev) => (prev === leatherTextures.length - 1 ? 0 : prev + 1));
   };
-const [touchStartX, setTouchStartX] = React.useState(0);
+  const [touchStartX, setTouchStartX] = React.useState(0);
   const [dragOffset, setDragOffset] = React.useState(0);
   const [isSwiping, setIsSwiping] = React.useState(false);
 
