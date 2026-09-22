@@ -3,10 +3,6 @@ import React, { useState } from 'react';
 export default function IntroScreen({ onFinish }) {
   const [fade, setFade] = useState(false);
 
-  // فحص نوع الجهاز مباشرة في نفس لحظة تحميل الكود
-  const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false;
-  const currentVideo = isMobile ? '/intro-mobile.mp4' : '/intro-pc.mp4';
-
   const handleEnd = () => {
     setFade(true);
     setTimeout(() => {
@@ -21,8 +17,6 @@ export default function IntroScreen({ onFinish }) {
       }`}
     >
       <video
-        key={currentVideo}
-        src={currentVideo}
         autoPlay
         muted
         playsInline
@@ -30,9 +24,14 @@ export default function IntroScreen({ onFinish }) {
         onEnded={handleEnd}
         onError={handleEnd}
         className="w-full h-full object-cover pointer-events-none"
-      />
+      >
+        {/* نسخة الموبايل للشاشات الرأسية والأصغر من 768px */}
+        <source src="/intro-mobile.mp4?v=2" media="(max-width: 768px)" type="video/mp4" />
+        {/* نسخة أجهزة الكمبيوتر للشاشات الأكبر */}
+        <source src="/intro-pc.mp4?v=2" type="video/mp4" />
+      </video>
 
-      {/* زر التخطي Skip */}
+      {/* زر التخطي */}
       <button
         type="button"
         onClick={handleEnd}
