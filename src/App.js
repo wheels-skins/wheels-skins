@@ -173,9 +173,9 @@ export default function WheelsSkinsApp() {
 
   // قائمة عينات خامات وألوان الجلد لسلايدر الـ 3D Coverflow مع المسارات المباشرة من public/textures
   const leatherTextures = [
+    { title: 'جلد كاربون فايبر', desc: 'شكل عصري فخم ومقاومة عالية للحرارة', image: `${publicUrl}/textures/carbon.jpg`, fallback: wheelCarbon, colorHex: '#09090B' },
     { title: 'جلد سادة ', desc: 'ملمس ناعم كلاسيكي  ', image: `${publicUrl}/textures/plain.jpg`, fallback: wheelPlain, colorHex: '#18181B' },
     { title: 'جلد منقط ', desc: 'مسامي يمنع التعرق و ثبات قبض اليد', image: `${publicUrl}/textures/dotted.jpg`, fallback: wheelDotted, colorHex: '#27272A' },
-    { title: 'جلد كاربون فايبر', desc: 'شكل عصري فخم ومقاومة عالية للحرارة', image: `${publicUrl}/textures/carbon.jpg`, fallback: wheelCarbon, colorHex: '#09090B' },
     { title: 'جلد فورجيد ', desc: 'نمط عصري يمنح الطارة هوية فريدة', image: `${publicUrl}/textures/forged.jpg`, fallback: wheelForged, colorHex: '#3F3F46' },
     { title: 'شامواه / ألكنتارا ', desc: 'أعلى درجات الراحة والعزل الحراري', image: `${publicUrl}/textures/alcantara.jpg`, fallback: wheelAlcantara, colorHex: '#52525B' },
     { title: 'جلد أحمر ', desc: 'طابع رياضي جريء عالي المقاومة', image: `${publicUrl}/textures/red.jpg`, fallback: wheelPlain, colorHex: '#DC2626' },
@@ -201,7 +201,25 @@ export default function WheelsSkinsApp() {
   const handleNextTexture = () => {
     setActiveTextureIndex((prev) => (prev === leatherTextures.length - 1 ? 0 : prev + 1));
   };
+const [touchStartX, setTouchStartX] = React.useState(null);
 
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!touchStartX) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+
+    // مسافة حركة الإصبع
+    if (diff > 45) {
+      handleNextTexture(); // سحب لليسار: ينتقل للشكل التالي
+    } else if (diff < -45) {
+      handlePrevTexture(); // سحب لليمين: يرجع للشكل السابق
+    }
+    setTouchStartX(null);
+  }; 
   const wheelOptions = [
     { id: 'plain', name: 'طارة: جلد سادة', price: 400, priceText: '400 ج.م', image: wheelPlain },
     { id: 'dotted', name: 'طارة: جلد منقط', price: 400, priceText: '400 ج.م', image: wheelDotted },
@@ -588,9 +606,9 @@ export default function WheelsSkinsApp() {
           </div>
 
           {/* أزرار الأسهم التفاعلية للتنقل بين خامات الجلد */}
-          <div className="flex items-center justify-center gap-6 mt-4">
+          <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} className="flex items-center justify-center relative touch-pan-y select-none">            
             <button
-              onClick={handlePrevTexture}
+             onClick={handleNextTexture}
               title="الخامة السابقة"
               className="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-700 hover:border-[#E3211C] text-white hover:text-[#E3211C] flex items-center justify-center shadow-lg transition-all active:scale-90 cursor-pointer"
             >
@@ -609,7 +627,7 @@ export default function WheelsSkinsApp() {
             </div>
 
             <button
-              onClick={handleNextTexture}
+              onClick={handlePrevTexture}
               title="الخامة التالية"
               className="w-11 h-11 rounded-full bg-zinc-900 border border-zinc-700 hover:border-[#E3211C] text-white hover:text-[#E3211C] flex items-center justify-center shadow-lg transition-all active:scale-90 cursor-pointer"
             >
