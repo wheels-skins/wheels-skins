@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function IntroScreen({ onFinish }) {
   const [fade, setFade] = useState(false);
+  const [videoSrc, setVideoSrc] = useState('/intro-pc.mp4');
+
+  useEffect(() => {
+    // تحديد الفيديو المناسب حسب حجم الشاشة فور تحميل الصفحة
+    const isMobile = window.innerWidth <= 768;
+    setVideoSrc(isMobile ? '/intro-mobile.mp4' : '/intro-pc.mp4');
+  }, []);
 
   const handleEnd = () => {
     setFade(true);
@@ -16,19 +23,19 @@ export default function IntroScreen({ onFinish }) {
         fade ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      {/* مشغل الفيديو: يعرض الفيديو كاملاً بدون قص أطراف على الموبايل والكمبيوتر */}
       <video
-        src={`${process.env.PUBLIC_URL}/intro.mp4`}
+        key={videoSrc}
+        src={videoSrc}
         autoPlay
         muted
         playsInline
         preload="auto"
         onEnded={handleEnd}
         onError={handleEnd}
-        className="max-w-full max-h-full w-auto h-auto object-contain pointer-events-none"
+        className="w-full h-full object-cover pointer-events-none"
       />
 
-      {/* زر التخطي Skip */}
+      {/* زر Skip للتخطي */}
       <button
         type="button"
         onClick={handleEnd}
