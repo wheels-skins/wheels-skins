@@ -4,3 +4,8 @@ body {
   font-family: 'Cairo', sans-serif;
   background-color: #0B0B0B;
 }
+/* إخفاء نافذة التحذيرات من شاشة المتصفح */
+iframe#webpack-dev-server-client-overlay,
+body > iframe {
+  display: none !important;
+} 

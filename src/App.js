@@ -5,6 +5,8 @@ import {
   ChevronDown
 } from 'lucide-react';
 
+import IntroScreen from './components/IntroScreen';
+
 // استدعاء قاعدة بيانات السيارات من الملف المستقل
 import { CAR_DATABASE } from './carDate';
 import { Analytics } from '@vercel/analytics/react';
@@ -151,7 +153,7 @@ const Card3D = ({ children, className = "", delay = 0, glowColor = "rgba(227,33,
 
 export default function WheelsSkinsApp() {
   const [heroScroll, setHeroScroll] = React.useState(0);
-
+  const [showIntro, setShowIntro] = useState(true);
   React.useEffect(() => {
     const handleScroll = () => {
       setHeroScroll(window.scrollY);
@@ -363,7 +365,7 @@ export default function WheelsSkinsApp() {
 
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-white font-['Cairo'] antialiased selection:bg-[#E3211C] selection:text-white" dir="rtl">
-      
+      {showIntro && <IntroScreen onFinish={() => setShowIntro(false)} />}
       {/* 1. Header Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
