@@ -7,7 +7,7 @@ export default function IntroScreen({ onFinish }) {
     setFade(true);
     setTimeout(() => {
       onFinish();
-    }, 700);
+    }, 600);
   };
 
   return (
@@ -16,22 +16,31 @@ export default function IntroScreen({ onFinish }) {
         fade ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
+      {/* مشغل فيديو الموبايل فقط (يظهر على الشاشات الصغيرة ويختفي في الكمبيوتر) */}
       <video
         autoPlay
         muted
         playsInline
         preload="auto"
         onEnded={handleEnd}
-        onError={handleEnd}
-        className="w-full h-full object-cover pointer-events-none"
+        className="w-full h-full object-cover block md:hidden pointer-events-none"
       >
-        {/* نسخة الموبايل للشاشات الرأسية والأصغر من 768px */}
-        <source src="/intro-mobile.mp4?v=2" media="(max-width: 768px)" type="video/mp4" />
-        {/* نسخة أجهزة الكمبيوتر للشاشات الأكبر */}
-        <source src="/intro-pc.mp4?v=2" type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL || ''}/intro-mobile.mp4`} type="video/mp4" />
       </video>
 
-      {/* زر التخطي */}
+      {/* مشغل فيديو الكمبيوتر واللابتوب فقط (يظهر من مقاس md فما فوق) */}
+      <video
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        onEnded={handleEnd}
+        className="w-full h-full object-cover hidden md:block pointer-events-none"
+      >
+        <source src={`${process.env.PUBLIC_URL || ''}/intro-pc.mp4`} type="video/mp4" />
+      </video>
+
+      {/* زر التخطي Skip */}
       <button
         type="button"
         onClick={handleEnd}
