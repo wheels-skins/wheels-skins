@@ -155,12 +155,19 @@ export default function WheelsSkinsApp() {
   const [heroScroll, setHeroScroll] = React.useState(0);
   const [showIntro, setShowIntro] = useState(true);
   React.useEffect(() => {
-    const handleScroll = () => {
+  // إذا كان الجهاز موبايل (الشاشة أقل من 768px)، لا تحسب السكرول لمنع الرعشة نهائياً
+  if (window.innerWidth <= 768) return;
+
+  const handleScroll = () => {
+    // استخدام requestAnimationFrame لجعل حركة السكرول ناعمة جداً وبدون تقطيع
+    window.requestAnimationFrame(() => {
       setHeroScroll(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    });
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   const publicUrl = process.env.PUBLIC_URL || '';
 
