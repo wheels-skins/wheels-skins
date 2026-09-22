@@ -177,9 +177,9 @@ export default function WheelsSkinsApp() {
     { title: 'جلد جملي ', desc: 'درجة الجملي الكلاسيكية الفاخرة للسيارات الفارهة', image: `${publicUrl}/textures/camel.jpg`, fallback: wheelPlain, colorHex: '#C19A6B' },
     { title: 'جلد لبني ', desc: 'درجة ملكية داكنة فخمة  ', image: `${publicUrl}/textures/navy.jpg`, fallback: wheelPlain, colorHex: '#1E3A8A' },
     { title: 'جلد بني ', desc: 'مظهر جلدي دافئ وفخم  ', image: `${publicUrl}/textures/brown.jpg`, fallback: wheelPlain, colorHex: '#78350F' },
-    { title: 'جلد فسفوري مضيء', desc: 'مظهر رياضي مشع وجريء', image: `${publicUrl}/textures/neon-green.jpg`, fallback: wheelPlain, colorHex: '#39FF14' },
-    { title: 'جلد وردي (بينك)', desc: 'لمسة عصرية مميزة وجذابة', image: `${publicUrl}/textures/neon-pink.jpg`, fallback: wheelPlain, colorHex: '#FF10F0' },
-    { title: 'جلد أصفر فسفوري', desc: 'إطلالة رياضية حماسية ساطعة', image: `${publicUrl}/textures/neon-yellow.jpg`, fallback: wheelPlain, colorHex: '#CCFF00' }
+    { title: 'جلد فسفوري مضيء', desc: 'مظهر رياضي مشع وجريء', image: `${publicUrl}/textures/green.jpg`, fallback: wheelPlain, colorHex: '#39FF14' },
+    { title: 'جلد وردي (بينك)', desc: 'لمسة عصرية مميزة وجذابة', image: `${publicUrl}/textures/pink.jpg`, fallback: wheelPlain, colorHex: '#FF10F0' },
+    { title: 'جلد أصفر فسفوري', desc: 'إطلالة رياضية حماسية ساطعة', image: `${publicUrl}/textures/yellow.jpg`, fallback: wheelPlain, colorHex: '#CCFF00' }
   ];
 
 
