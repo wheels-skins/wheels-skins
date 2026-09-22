@@ -3,6 +3,12 @@ import React, { useState } from 'react';
 export default function IntroScreen({ onFinish }) {
   const [fade, setFade] = useState(false);
 
+  // فحص الشاشة: إذا كان العرض أقل من أو يساوي 768px فهو موبايل
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false;
+
+  // إضافة علامة زمنية لمنع الكاش تماماً وإجبار المتصفح على تشغيل الملف المخصص
+  const videoFile = isMobile ? '/intro-mobile.mp4?v=mobile_v3' : '/intro-pc.mp4?v=pc_v3';
+
   const handleEnd = () => {
     setFade(true);
     setTimeout(() => {
@@ -16,29 +22,17 @@ export default function IntroScreen({ onFinish }) {
         fade ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      {/* مشغل فيديو الموبايل فقط (يظهر على الشاشات الصغيرة ويختفي في الكمبيوتر) */}
       <video
+        key={videoFile}
+        src={videoFile}
         autoPlay
         muted
         playsInline
         preload="auto"
         onEnded={handleEnd}
-        className="w-full h-full object-cover block md:hidden pointer-events-none"
-      >
-        <source src={`${process.env.PUBLIC_URL || ''}/intro-mobile.mp4`} type="video/mp4" />
-      </video>
-
-      {/* مشغل فيديو الكمبيوتر واللابتوب فقط (يظهر من مقاس md فما فوق) */}
-      <video
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onEnded={handleEnd}
-        className="w-full h-full object-cover hidden md:block pointer-events-none"
-      >
-        <source src={`${process.env.PUBLIC_URL || ''}/intro-pc.mp4`} type="video/mp4" />
-      </video>
+        onError={handleEnd}
+        className="w-full h-full object-cover pointer-events-none"
+      />
 
       {/* زر التخطي Skip */}
       <button
