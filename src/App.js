@@ -201,25 +201,33 @@ export default function WheelsSkinsApp() {
   const handleNextTexture = () => {
     setActiveTextureIndex((prev) => (prev === leatherTextures.length - 1 ? 0 : prev + 1));
   };
-const [touchStartX, setTouchStartX] = React.useState(null);
+const [touchStartX, setTouchStartX] = React.useState(0);
+  const [dragOffset, setDragOffset] = React.useState(0);
+  const [isSwiping, setIsSwiping] = React.useState(false);
 
   const handleTouchStart = (e) => {
     setTouchStartX(e.targetTouches[0].clientX);
+    setIsSwiping(true);
   };
 
-  const handleTouchEnd = (e) => {
-    if (!touchStartX) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
-
-    // مسافة حركة الإصبع
-    if (diff > 45) {
-      handleNextTexture(); // سحب لليسار: ينتقل للشكل التالي
-    } else if (diff < -45) {
-      handlePrevTexture(); // سحب لليمين: يرجع للشكل السابق
+  const handleTouchMove = (e) => {
+    if (!isSwiping) return;
+    const currentX = e.targetTouches[0].clientX;
+    const diff = currentX - touchStartX;
+    if (Math.abs(diff) < 120) {
+      setDragOffset(diff);
     }
-    setTouchStartX(null);
-  }; 
+  };
+
+  const handleTouchEnd = () => {
+    setIsSwiping(false);
+    if (dragOffset < -40) {
+      handleNextTexture();
+    } else if (dragOffset > 40) {
+      handlePrevTexture();
+    }
+    setDragOffset(0);
+  };
   const wheelOptions = [
     { id: 'plain', name: 'طارة: جلد سادة', price: 400, priceText: '400 ج.م', image: wheelPlain },
     { id: 'dotted', name: 'طارة: جلد منقط', price: 400, priceText: '400 ج.م', image: wheelDotted },
