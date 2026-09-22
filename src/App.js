@@ -10,7 +10,7 @@ import { CAR_DATABASE } from './carDate';
 import { Analytics } from '@vercel/analytics/react';
 // استدعاء اللوجو وخلفية الهيدر الاحتياطية
 import logo from './logo.png';
-import heroBg from './hero-bg.jpg';
+
 
 // استدعاء صور الطارات المنفردة
 import wheelPlain from './wheel-plain.png';
