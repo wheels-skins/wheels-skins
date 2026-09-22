@@ -22,7 +22,7 @@ export default function IntroScreen({ onFinish }) {
         muted
         playsInline
         onEnded={handleEnd}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
       />
       
       {/* زر تخطي أنيق للزائر المستعجل */}
