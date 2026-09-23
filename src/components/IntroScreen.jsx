@@ -1,20 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function IntroScreen({ onFinish }) {
   const [fade, setFade] = useState(false);
+  const videoRef = useRef(null);
 
   // فحص الشاشة: إذا كان العرض أقل من أو يساوي 768px فهو موبايل
-  const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false;
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+  );
 
-  // إضافة علامة زمنية لمنع الكاش تماماً وإجبار المتصفح على تشغيل الملف المخصص
-  const videoFile = isMobile ? '/intro-mobile.mp4?v=mobile_v3' : '/intro-pc.mp4?v=pc_v3';
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // تحديد الفيديو الخاص بكل جهاز
+  const videoFile = isMobile ? '/intro-mobile.mp4?v=mobile_v4' : '/intro-pc.mp4?v=pc_v4';
 
   const handleEnd = () => {
     setFade(true);
     setTimeout(() => {
-      onFinish();
+      if (onFinish) onFinish();
     }, 600);
   };
+
+  // إجبار الكتم برمجياً وتشغيل الفيديو تلقائياً على أجهزة الكمبيوتر والموبايل
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.playsInline = true;
+
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn("Desktop Autoplay prevented, retrying muted play:", err);
+          video.muted = true;
+          video.play().catch(() => {});
+        });
+      }
+    }
+  }, [videoFile]);
 
   return (
     <div
@@ -23,6 +53,7 @@ export default function IntroScreen({ onFinish }) {
       }`}
     >
       <video
+        ref={videoRef}
         key={videoFile}
         src={videoFile}
         autoPlay
@@ -30,7 +61,10 @@ export default function IntroScreen({ onFinish }) {
         playsInline
         preload="auto"
         onEnded={handleEnd}
-        onError={handleEnd}
+        onLoadedMetadata={(e) => {
+          e.target.muted = true;
+          e.target.play().catch(() => {});
+        }}
         className="w-full h-full object-cover pointer-events-none"
       />
 
