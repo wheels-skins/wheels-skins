@@ -481,8 +481,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
             <h1 
               className="text-5xl sm:text-7xl md:text-8xl font-black tracking-wider transition-transform duration-75 ease-out opacity-85 hover:opacity-100"
               style={{
-                transform: `translate3d(0, ${heroScroll * 0.4}px, ${heroScroll * 0.2}px) rotateX(${Math.min(heroScroll * 0.04, 15)}deg) scale(${Math.max(1 - heroScroll * 0.0008, 0.85)})`,
-                opacity: Math.max((1 - heroScroll / 450) * 0.85, 0),
+              transform: `translate3d(0, ${110 + heroScroll * 0.4}px, 0)`,                opacity: Math.max((1 - heroScroll / 450) * 0.85, 0),
                 textShadow: '0 10px 25px rgba(0,0,0,0.6), 0 0 20px rgba(227,49,28,0.25)'
               }}
             >
