@@ -359,8 +359,8 @@ const [touchStartX, setTouchStartX] = React.useState(null);
 
     const message = `*طلب حجز موعد جديد - WheelsSkins*%0A` +
       `--------------------------------%0A` +
-      `*الفرع المختار:* ${encodeURIComponent(selectedBranch)}%0A` +
-      `*تاريخ الميعاد:* ${encodeURIComponent(appointmentDate)}%0A` +
+      `*الفرع :* ${encodeURIComponent(selectedBranch)}%0A` +
+      `*التاريخ :* ${encodeURIComponent(appointmentDate)}%0A` +
       `*الساعة:* ${encodeURIComponent(appointmentTime)}%0A` +
       `--------------------------------%0A` +
       `*الاسم:* ${encodeURIComponent(customerName)}%0A` +
@@ -368,7 +368,6 @@ const [touchStartX, setTouchStartX] = React.useState(null);
       `*السيارة:* ${encodeURIComponent(selectedBrand)} - ${encodeURIComponent(finalModel)}%0A` +
       `--------------------------------%0A` +
       `*كسوة الطارة:* ${encodeURIComponent(selectedWheel.name)}%0A` +
-      `*لون الخياطة:* ${encodeURIComponent(selectedThread.name)}%0A` +
       `*الفتيس:* ${encodeURIComponent(gearText)}%0A` +
       `*الهاند بريك:* ${encodeURIComponent(handbrakeText)}%0A` +
       `--------------------------------%0A` +
