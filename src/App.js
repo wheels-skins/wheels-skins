@@ -792,7 +792,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
       <section id="configurator" className="py-20 px-6 max-w-7xl mx-auto border-t border-zinc-900">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-4xl font-extrabold mb-3">Design your luxury cover and see the add-ons instantly.</h2>
-          <p className="text-zinc-400 text-sm sm:text-base">اختر الطارة ثم حدد مقبض الفتيس أو الهاند بريك وسيظهر شكل كل قطعة فوراً</p>
+          <p className="text-zinc-400 text-sm sm:text-base">اختر الطارة ثم حدد مقبض الفتيس أو الهاند بريك يمكن تغير الشكل في الفرع ايضا </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-950/80 p-6 sm:p-10 rounded-2xl border border-zinc-800">
@@ -888,8 +888,12 @@ const [touchStartX, setTouchStartX] = React.useState(null);
           <div className="lg:col-span-6 space-y-6">
             <div>
               <div className="flex justify-between items-center mb-2.5">
-                <label className="text-sm font-bold text-zinc-200">1. خامة وميكس الطارة (إجباري):</label>
-                <span className="text-xs font-bold text-[#E3211C]">{selectedWheel.priceText}</span>
+          <label className="text-sm font-bold text-zinc-200 flex items-center gap-1.5 flex-wrap">
+          <span>1. خامة وميكس الطارة (إجباري):</span>
+          <span className="text-[11px] text-amber-400 font-normal bg-amber-400/10 px-1.5 py-0.5 rounded border border-amber-400/20">
+            (يمكنك تغيير اختيار الجلد في الفرع أيضاً)
+          </span>
+          </label>                <span className="text-xs font-bold text-[#E3211C]">{selectedWheel.priceText}</span>
               </div>
 
               <div className="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto pr-1">
