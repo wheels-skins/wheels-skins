@@ -394,7 +394,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded overflow-hidden flex items-center justify-center bg-black border border-zinc-800">
-            <img src={logo} alt="Wheels Skins" className="h-full w-full object-contain" />
+            <img src={logo} alt="Wheels Skins" className="h-full w-full object-contain" loading='lazy' />
           </div>
           <div className="text-right leading-tight">
             <div className="text-white font-bold text-lg tracking-wider flex items-center gap-1">
