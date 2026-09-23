@@ -284,7 +284,20 @@ const [touchStartX, setTouchStartX] = React.useState(null);
     }
     return () => clearInterval(timer);
   }, [modalMedia]);
+  useEffect(() => {
+    if (modalMedia) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
 
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [modalMedia]);
   const dateInputRef = useRef(null);
 
   const todayStr = useMemo(() => {
