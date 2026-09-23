@@ -269,5 +269,22 @@ export const CAR_DATABASE = [
   {
     brand: 'Suzuki (سوزوكي)',
     models: ['Swift (سويفت)', 'Dzire (ديزاير)', 'Ciaz (سياز)', 'Baleno (بالينو)', 'Vitara (فيتارا)', 'Jimny (جيمني)', 'Ertiga (أرتيجا)', 'Alto (ألتو)', 'Fronx (فرونكس)']
+  },
+  {
+    brand: 'Dongfeng (دونج فينج)',
+    models: [
+      'Aeolus A30 (إيولوس A30)',
+      'Aeolus Shine (شاين)',
+      'Aeolus Shine Max (شاين ماكس)',
+      'Aeolus AX7 (AX7)',
+      'Aeolus Mage (ماج)',
+      'Aeolus Huge (هوج)',
+      'Forthing T5 EVO (T5 إيفو)',
+      'Forthing U-Tour (يو تور)',
+      'Venucia Star (فينوشيا ستار)',
+      'Box EV (بوكس كهرباء)',
+      'Rich 6 (بيك اب ريتش 6)',
+      'اخرى / غير مدرج'
+    ]
   }
 ];
