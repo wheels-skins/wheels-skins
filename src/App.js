@@ -1388,7 +1388,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
 
       {/* 9. Footer */}
       <footer className="py-8 border-t border-zinc-900 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} WheelSkins. جميع الحقوق محفوظة. By Maestro omar fox
+        © {new Date().getFullYear()} WheelSkins. جميع الحقوق محفوظة. By omar fox
       </footer>
 
       {/* 10. المعاينة المنبثقة الذكية (Modal) */}
