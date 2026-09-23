@@ -815,7 +815,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
                 key={selectedWheel.id}
                 src={selectedWheel.image} 
                 alt={selectedWheel.name} 
-                className="w-full h-full object-contain filter drop-shadow-[0_15px_20px_rgba(0,0,0,0.95)] transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-full object-cover filter drop-shadow-[0_15px_20px_rgba(0,0,0,0.95)] transition-transform duration-300 group-hover:scale-105"
               />
 
               <div className="absolute top-4 right-4 bg-black/70 p-2 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -840,7 +840,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
                       <img 
                         src={gearDotted} 
                         alt="الفتيس" 
-                        className="max-w-full max-h-full object-contain filter drop-shadow group-hover:scale-105 transition"
+                        className="max-w-full max-h-full object-cover filter drop-shadow group-hover:scale-105 transition"
                       />
                     </div>
                     <span className="text-xs font-bold text-white mt-1">فتيس</span>
@@ -862,7 +862,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
                       <img 
                         src={handbrakeCover} 
                         alt="الهاند بريك" 
-                        className="max-w-full max-h-full object-contain filter drop-shadow group-hover:scale-105 transition"
+                        className="max-w-full max-h-full object-cover filter drop-shadow group-hover:scale-105 transition"
                       />
                     </div>
                     <span className="text-xs font-bold text-white mt-1">كسوة هاند بريك</span>
