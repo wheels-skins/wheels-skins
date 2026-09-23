@@ -1411,7 +1411,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
                 loop 
                 muted 
                 playsInline
-                preload="none"
+                preload="auto"
                 controls
                 className="max-w-full max-h-[70vh] rounded-2xl border border-zinc-800 shadow-2xl"
                 onError={(e) => {
