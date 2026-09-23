@@ -466,7 +466,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover brightness-105 contrast-105"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
@@ -1410,7 +1410,8 @@ const [touchStartX, setTouchStartX] = React.useState(null);
                 autoPlay 
                 loop 
                 muted 
-                playsInline 
+                playsInline
+                preload="metadata"
                 controls
                 className="max-w-full max-h-[70vh] rounded-2xl border border-zinc-800 shadow-2xl"
                 onError={(e) => {

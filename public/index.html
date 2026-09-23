@@ -48,13 +48,21 @@
     />
     <meta name="twitter:image" content="https://www.wheels-skins.com/logo.png" />
 
-    <!-- خط Cairo -->
+    <!-- تحسين تحميل خط Cairo لمنع حجب الرندر -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -77,6 +85,6 @@
   <body class="bg-[#0B0B0B] text-white font-['Cairo'] antialiased">
     <noscript>يجب تفعيل الجافاسكريبت لتشغيل وتصفح الموقع بكفاءة.</noscript>
     <div id="root"></div>
-    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <script src="https://elfsightcdn.com/platform.js" defer></script>
   </body>
 </html>
