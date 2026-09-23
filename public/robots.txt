@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wheels-skins.vercel.app/sitemap.xml
+Sitemap: https://www.wheels-skins.com/sitemap.xml
