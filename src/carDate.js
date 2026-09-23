@@ -266,6 +266,7 @@ export const CAR_DATABASE = [
     brand: 'Ford (فورد)',
     models: ['Focus (فوكس)', 'Fiesta (فييستا)', 'EcoSport (إيكوسبورت)', 'Kuga (كوجا)', 'Fusion (فيوجن)']
   },
+
   {
     brand: 'Suzuki (سوزوكي)',
     models: ['Swift (سويفت)', 'Dzire (ديزاير)', 'Ciaz (سياز)', 'Baleno (بالينو)', 'Vitara (فيتارا)', 'Jimny (جيمني)', 'Ertiga (أرتيجا)', 'Alto (ألتو)', 'Fronx (فرونكس)']
@@ -273,17 +274,47 @@ export const CAR_DATABASE = [
   {
     brand: 'Dongfeng (دونج فينج)',
     models: [
-      'Aeolus A30 (إيولوس A30)',
+      // موديل MAGE 2026 والموديلات الحديثة
+      'Dongfeng MAGE 2026 (ماج 2026)',
+      'Dongfeng MAGE (ماج بنزين / هايبرد)',
+      'Aeolus Huge (هوج)',
       'Aeolus Shine (شاين)',
       'Aeolus Shine Max (شاين ماكس)',
       'Aeolus AX7 (AX7)',
-      'Aeolus Mage (ماج)',
-      'Aeolus Huge (هوج)',
+      'Aeolus A30 (إيولوس A30)',
+      'Aeolus Haoji (هاوجي)',
+      'Aeolus Yixuan (ييشوان)',
+      
+      // السيارات الكهربائية وسلسلة eπ
+      'eπ 007 / Dongfeng 007 (REEV / EV)',
+      'eπ 008 / Dongfeng 008 (REEV / EV)',
+      'Dongfeng Box / Nammi 01 (بوكس)',
+      'Dongfeng Nano Box (نانو بوكس)',
+      'Dongfeng EX1 (إكس 1)',
+      
+      // سلسلة Forthing
       'Forthing T5 EVO (T5 إيفو)',
       'Forthing U-Tour (يو تور)',
+      'Forthing Friday (فرايداي EV)',
+      'Forthing SX6 (SX6)',
+      
+      // سلسلة Venucia
       'Venucia Star (فينوشيا ستار)',
-      'Box EV (بوكس كهرباء)',
+      'Venucia V-Online (في أونلاين)',
+      'Venucia D60 (D60)',
+      
+      // سلسلة Voyah و M-Hero والبيك أب
+      'Voyah Free (فوياه فري)',
+      'Voyah Dreamer (فوياه دريمر)',
+      'Voyah Passion (فوياه باشن)',
+      'M-Hero 917 (إم هيرو)',
       'Rich 6 (بيك اب ريتش 6)',
+      'Rich 7 (ريتش 7)',
+      
+      // موديلات سابقة
+      'Dongfeng S30 (S30)',
+      'Dongfeng H30 Cross (H30 كروس)',
+      
       'اخرى / غير مدرج'
     ]
   }
