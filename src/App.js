@@ -486,8 +486,9 @@ const [touchStartX, setTouchStartX] = React.useState(null);
                 textShadow: '0 10px 25px rgba(0,0,0,0.6), 0 0 20px rgba(227,49,28,0.25)'
               }}
             >
-              <span className="text-white/80">Wheels </span>
-              <span className="text-[#E3211C]/85">Skins</span>
+           <span className="text-white/80">Wheels </span>
+           <span className="text-[#E3211C]/85">Skins</span>
+           <span className="sr-only"> - تفصيل وكسوة طارات السيارات هاند ميد وتجليد دركسيون جلد طبيعي</span>
             </h1>
           </div>
         </div>
