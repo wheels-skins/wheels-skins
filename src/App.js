@@ -508,7 +508,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
             >
            <span className="text-white/80">Wheels </span>
            <span className="text-[#E3211C]/85">Skins</span>
-           <span className="sr-only"> - تفصيل وكسوة طارات السيارات هاند ميد وحمايه دركسيون جلد طبيعي</span>
+           <span className="sr-only"> - تفصيل وكسوة طارات السيارات هاند ميد وحمايه دركسيون جلد </span>
             </h1>
           </div>
         </div>
@@ -561,7 +561,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-white">كتالوج خامات وألوان الجلد المتاحة</h2>
           <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl mx-auto">
-            تصفح شكل وملمس الجلد الطبيعي والصناعي والرياضي المتاح للتفصيل الفوري
+            تصفح شكل وملمس الجلد الماني والصناعي والرياضي المتاح للتفصيل الفوري
           </p>
 
           {/* حاوية الـ 3D Coverflow */}
