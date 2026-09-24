@@ -6,15 +6,14 @@ import {
   ChevronDown
 } from 'lucide-react';
 import IntroScreen from './components/IntroScreen';
-
+import galleryImages from './gallery';
 // استدعاء قاعدة بيانات السيارات من الملف المستقل
 import { CAR_DATABASE } from './carDate';
 import { Analytics } from '@vercel/analytics/react';
 // استدعاء اللوجو وخلفية الهيدر الاحتياطية
 import logo from './logo.png';
 
-
-// استدعاء صور الطارات المنفردة
+import Hero3DMarquee from './components/Hero3dMarquee';// استدعاء صور الطارات المنفردة
 import wheelPlain from './wheel-plain.png';
 import wheelDotted from './wheel-dotted.png';
 import wheelCarbon from './wheel-carbon.png';
@@ -396,10 +395,6 @@ const [touchStartX, setTouchStartX] = React.useState(null);
     });
   };
 
-  const showcaseImages = useMemo(() => {
-    return Array.from({ length: 20 }, (_, i) => `${publicUrl}/gallery/work${i + 1}.jpg`);
-  }, [publicUrl]);
-
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-white font-['Cairo'] antialiased selection:bg-[#E3211C] selection:text-white" dir="rtl">
       {showIntro && <IntroScreen onFinish={() => setShowIntro(false)} />}
@@ -411,7 +406,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
           </div>
           <div className="text-right leading-tight">
             <div className="text-white font-bold text-lg tracking-wider flex items-center gap-1">
-              WheelSkins <span className="text-[#E3211C] font-black">/</span>
+              WheelsSkins <span className="text-[#E3211C] font-black">/</span>
             </div>
             <div className="text-xs text-zinc-400 font-medium">Wheels Skins</div>
           </div>
@@ -514,43 +509,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
         </div>
       </section>
 
-      {/* 3. شريط الصور المتحرك اللانهائي الحقيقي - بدون أي فراغات */}
-      <div className="relative w-full overflow-hidden bg-black/60 py-6 border-y border-zinc-900 select-none" dir="ltr">
-        <style dangerouslySetInnerHTML={{__html: `
-          @keyframes scrollSeamless {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-infinite-marquee {
-            display: flex;
-            width: max-content;
-            animation: scrollSeamless 35s linear infinite;
-          }
-          .animate-infinite-marquee:hover {
-            animation-play-state: paused;
-          }
-        `}} />
-        
-        <div className="animate-infinite-marquee flex items-center gap-5">
-          {[...showcaseImages, ...showcaseImages].map((imgSrc, idx) => (
-            <div 
-              key={idx} 
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl bg-zinc-900/80 border border-zinc-800 flex-shrink-0 flex items-center justify-center p-2.5 shadow-lg hover:border-[#E3211C] hover:scale-105 transition duration-300 cursor-pointer"
-              onClick={() => setModalMedia({ src: imgSrc, title: `معاينة لقطة عمل #${(idx % 20) + 1}`, price: 'جودة 4K' })}
-            >
-              <img 
-                src={imgSrc} 
-                alt="Showcase" 
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = wheelPlain;
-                }}
-                className="w-full h-full object-cover rounded-xl filter drop-shadow pointer-events-none" 
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+<Hero3DMarquee images={galleryImages} />
 
       {/* 3.5 معرض خامات الجلد ثلاثي الأبعاد (Coverflow Slider) مع سهمين للتنقل */}
       <section id="textures" className="py-14 bg-gradient-to-b from-black via-zinc-950 to-[#0B0B0B] border-b border-zinc-900 overflow-hidden select-none">
@@ -1396,7 +1355,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
 
       {/* 9. Footer */}
       <footer className="py-8 border-t border-zinc-900 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} WheelSkins. جميع الحقوق محفوظة. By omar fox
+        © {new Date().getFullYear()} Wheels Skins. جميع الحقوق محفوظة. By omar fox
       </footer>
 
       {/* 10. المعاينة المنبثقة الذكية (Modal) */}

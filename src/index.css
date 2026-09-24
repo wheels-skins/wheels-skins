@@ -19,3 +19,15 @@ iframe#webpack-dev-server-client-overlay,
 body > iframe {
   display: none !important;
 }
+@keyframes skewMarquee {
+  0% {
+    transform: rotateX(14deg) rotateZ(-4deg) skewX(-6deg) translateX(0);
+  }
+  100% {
+    transform: rotateX(14deg) rotateZ(-4deg) skewX(-6deg) translateX(-50%);
+  }
+}
+
+.animate-skew-marquee {
+  animation: skewMarquee 28s linear infinite;
+}
