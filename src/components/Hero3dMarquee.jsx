@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Award, ShieldCheck, Sparkles, CheckCircle2, X } from 'lucide-react';
 
 export default function Hero3DMarquee({ images = [] }) {
   const displayImages = images && images.length > 0 ? images : [];
   const [selectedImage, setSelectedImage] = useState(null);
+
+  // قفل حركة سكرول الصفحة أثناء فتح معاينة الصورة
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedImage]);
 
   return (
     <section className="relative w-full py-12 bg-[#0B0B0B] overflow-hidden border-y border-zinc-800/80">
