@@ -318,4 +318,19 @@ export const CAR_DATABASE = [
       'اخرى / غير مدرج'
     ]
   }
+  ,{
+    brand: 'MINI (ميني كوبر)',
+    models: [
+      'Cooper 3-Door (ميني كوبر 3 باب)',
+      'Cooper 5-Door (ميني كوبر 5 باب)',
+      'Cooper S (ميني كوبر إس)',
+      'John Cooper Works - JCW (جون كوبر وركس)',
+      'Countryman (كانتري مان)',
+      'Clubman (كلوب مان)',
+      'Cooper Convertible (كابريوليه - كشف)',
+      'Paceman (بيسمان)',
+      'Coupe (كوبيه)',
+      'Roadster (رودستر)'
+    ]
+  },
 ];
