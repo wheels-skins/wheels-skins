@@ -266,7 +266,6 @@ export const CAR_DATABASE = [
     brand: 'Ford (فورد)',
     models: ['Focus (فوكس)', 'Fiesta (فييستا)', 'EcoSport (إيكوسبورت)', 'Kuga (كوجا)', 'Fusion (فيوجن)']
   },
-
   {
     brand: 'Suzuki (سوزوكي)',
     models: ['Swift (سويفت)', 'Dzire (ديزاير)', 'Ciaz (سياز)', 'Baleno (بالينو)', 'Vitara (فيتارا)', 'Jimny (جيمني)', 'Ertiga (أرتيجا)', 'Alto (ألتو)', 'Fronx (فرونكس)']
@@ -274,7 +273,6 @@ export const CAR_DATABASE = [
   {
     brand: 'Dongfeng (دونج فينج)',
     models: [
-      // موديل MAGE 2026 والموديلات الحديثة
       'Dongfeng MAGE 2026 (ماج 2026)',
       'Dongfeng MAGE (ماج بنزين / هايبرد)',
       'Aeolus Huge (هوج)',
@@ -284,41 +282,30 @@ export const CAR_DATABASE = [
       'Aeolus A30 (إيولوس A30)',
       'Aeolus Haoji (هاوجي)',
       'Aeolus Yixuan (ييشوان)',
-      
-      // السيارات الكهربائية وسلسلة eπ
       'eπ 007 / Dongfeng 007 (REEV / EV)',
       'eπ 008 / Dongfeng 008 (REEV / EV)',
       'Dongfeng Box / Nammi 01 (بوكس)',
       'Dongfeng Nano Box (نانو بوكس)',
       'Dongfeng EX1 (إكس 1)',
-      
-      // سلسلة Forthing
       'Forthing T5 EVO (T5 إيفو)',
       'Forthing U-Tour (يو تور)',
       'Forthing Friday (فرايداي EV)',
       'Forthing SX6 (SX6)',
-      
-      // سلسلة Venucia
       'Venucia Star (فينوشيا ستار)',
       'Venucia V-Online (في أونلاين)',
       'Venucia D60 (D60)',
-      
-      // سلسلة Voyah و M-Hero والبيك أب
       'Voyah Free (فوياه فري)',
       'Voyah Dreamer (فوياه دريمر)',
       'Voyah Passion (فوياه باشن)',
       'M-Hero 917 (إم هيرو)',
       'Rich 6 (بيك اب ريتش 6)',
       'Rich 7 (ريتش 7)',
-      
-      // موديلات سابقة
       'Dongfeng S30 (S30)',
       'Dongfeng H30 Cross (H30 كروس)',
-      
       'اخرى / غير مدرج'
     ]
-  }
-  ,{
+  },
+  {
     brand: 'MINI (ميني كوبر)',
     models: [
       'Cooper 3-Door (ميني كوبر 3 باب)',
@@ -333,4 +320,51 @@ export const CAR_DATABASE = [
       'Roadster (رودستر)'
     ]
   },
+  {
+    brand: 'Changan (شانجان)',
+    models: [
+      'CS35 Plus (سي إس 35 بلس)',
+      'CS55 Plus (سي إس 55 بلس)',
+      'CS75 Plus (سي إس 75 بلس)',
+      'CS85 (سي إس 85)',
+      'CS95 (سي إس 95)',
+      'UNI-T (يوني تي)',
+      'UNI-K (يوني كيه)',
+      'UNI-V (يوني في)',
+      'Alsvin (ألسفن)',
+      'Eado (إيدو)',
+      'Eado Plus (إيدو بلس)',
+      'Oshan X7 (أوشان إكس 7)'
+    ]
+  },
+  {
+    brand: 'JAC (جاك)',
+    models: [
+      'JS2 (جي إس 2)',
+      'JS3 (جي إس 3)',
+      'JS4 (جي إس 4)',
+      'J7 (جي 7)',
+      'S3 (إس 3)',
+      'S4 (إس 4)',
+      'T8 (بيك اب تي 8)',
+      'E30X (إي 30 إكس)'
+    ]
+  },
+  {
+    brand: 'Ferrari (فيراري)',
+    models: [
+      '458 Italia / Spider (458 إيطاليا)',
+      '488 GTB / Spider / Pista (488 جي تي بي / بيستا)',
+      'F8 Tributo / Spider (إف 8 تريبوتو)',
+      'SF90 Stradale / Spider (إس إف 90)',
+      '296 GTB / GTS (296 جي تي بي)',
+      'Roma / Roma Spider (روما)',
+      'Portofino / Portofino M (بورتوفينو)',
+      'Purosangue (بوروسانجوي)',
+      '812 Superfast / GTS / Competizione (812 سوبر فاست)',
+      'California / California T (كاليفورنيا)',
+      'F12berlinetta (إف 12 بيرلينيتا)',
+      'GTC4Lusso (جي تي سي 4 لوسو)'
+    ]
+  }
 ];
