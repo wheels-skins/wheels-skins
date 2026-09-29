@@ -337,7 +337,7 @@ export default function Footer() {
             className="text-xs order-2 sm:order-1 text-center sm:text-right"
             style={{ color: "rgba(255,255,255,0.5)", textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}
           >
-            ©️ {year} <span style={{ color: "#E3211C" }}>WheelSkins</span>  by:Omar Fox · جميع الحقوق محفوظة 
+            ©️ {year} <span style={{ color: "#E3211C" }}>WheelsSkins</span>  by:Omar Fox · جميع الحقوق محفوظة 
           </p>
 
           <div className="flex items-center gap-3 order-1 sm:order-2">
