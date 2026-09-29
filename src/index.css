@@ -19,15 +19,16 @@ iframe#webpack-dev-server-client-overlay,
 body > iframe {
   display: none !important;
 }
-@keyframes skewMarquee {
-  0% {
-    transform: rotateX(14deg) rotateZ(-4deg) skewX(-6deg) translateX(0);
-  }
-  100% {
-    transform: rotateX(14deg) rotateZ(-4deg) skewX(-6deg) translateX(-50%);
-  }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
-.animate-skew-marquee {
-  animation: skewMarquee 28s linear infinite;
+.animate-twinkle-fast {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-twinkle-slow {
+  animation: twinkle 6s ease-in-out infinite;
 }

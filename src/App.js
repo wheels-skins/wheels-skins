@@ -1,4 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
+//الفوتر الاضافي الجديد 
+import Footer from './components/Footer';
+import FAQ from './components/FAQ';
 import { Phone } from 'lucide-react';
 import { 
   Calendar, ChevronLeft, ChevronRight, MapPin, AlertTriangle, X, ZoomIn, 
@@ -7,6 +10,7 @@ import {
 } from 'lucide-react';
 import IntroScreen from './components/IntroScreen';
 import galleryImages from './gallery';
+
 // استدعاء قاعدة بيانات السيارات من الملف المستقل
 import { CAR_DATABASE } from './carDate';
 import { Analytics } from '@vercel/analytics/react';
@@ -1352,11 +1356,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
       >
         <ChevronDown className="w-6 h-6 group-hover:translate-y-0.5 transition-transform animate-bounce" />
       </button>
-
-      {/* 9. Footer */}
-      <footer className="py-8 border-t border-zinc-900 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} Wheels Skins. جميع الحقوق محفوظة. By omar fox
-      </footer>
+      <FAQ />      <Footer />
 
       {/* 10. المعاينة المنبثقة الذكية (Modal) */}
       {modalMedia && (
