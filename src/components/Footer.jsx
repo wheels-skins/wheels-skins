@@ -135,7 +135,7 @@ function AmbientParticles() {
 /* ── تأثير الآلة الكاتبة المخصص للقصة ── */
 function StoryTypewriter({ visible }) {
   const storyArray = [
-    "في", <StoryLink key="l1" href="#home">WheelSkins</StoryLink>, "،", "بنتعامل", "مع", "طارة", "عربيتك", "كأهم", "جزء", "بتلمسه", "طول", "طريقك.",
+    "في", <StoryLink key="l1" href="#home">WheelsSkins</StoryLink>, "،", "بنتعامل", "مع", "طارة", "عربيتك", "كأهم", "جزء", "بتلمسه", "طول", "طريقك.",
     <br key="br1" className="hidden sm:block mt-2" />,
     "عشان", "كده", "طوّرنا", "طريقتنا", "على", "مدار", "10", "سنين", "عشان", "نقدملك", "تجربة", "مختلفة", "تماماً:",
     <StoryLink key="l2" href="#materials">جلد ألماني فاخر</StoryLink>, "،", <StoryLink key="l3" href="#features">خياطة يدوية بالكامل</StoryLink>, "،", "وفي", "خلال", "30", "دقيقة", "فقط.",
@@ -285,9 +285,9 @@ export default function Footer() {
               className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-widest text-white inline-flex items-center"
               style={{ letterSpacing: "0.22em", textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
             >
-              Wheel
+              Skins
               <span style={{ color: "#E3211C", textShadow: "0 0 18px rgba(227,33,28,0.6)" }}>
-                Skins
+                Wheels
               </span>
             </h2>
             <span
