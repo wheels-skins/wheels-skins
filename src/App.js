@@ -513,7 +513,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
           </div>
         </div>
       </section>
-      <BlackFridayBar />
+      
 
 <Hero3DMarquee images={galleryImages} />
 
@@ -641,7 +641,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
             تفصيل يدوي بدقة يجمع بين متانة الجلد وملمس الطاره المريح
           </p>
         </div>
-
+      <BlackFridayBar />
         <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
 
           <Card3D 
