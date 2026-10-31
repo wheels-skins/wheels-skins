@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
+import BlackFridayBar from './components/BlackFridayBar'; // تأكد من مطابقة المسار لمجلدك
 //الفوتر الاضافي الجديد 
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
@@ -512,6 +513,7 @@ const [touchStartX, setTouchStartX] = React.useState(null);
           </div>
         </div>
       </section>
+      <BlackFridayBar />
 
 <Hero3DMarquee images={galleryImages} />
 
